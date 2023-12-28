@@ -1,11 +1,12 @@
 import { useState } from "react";
 import useProducts from "../hooks/useProducts";
 import ProductTwo from "../Two/ProductTwo";
-import { TbAlertCircleFilled } from "react-icons/tb";
+
 
 
 const Second = () => {
     const [products] = useProducts();
+    console.log(products)
     const [activeTab, setActiveTab] = useState('top');
 
     const [activeDropdown, setActiveDropdown] = useState(null);
@@ -42,7 +43,7 @@ const Second = () => {
                     <div className="">
                         <h2 className="md:ml-2 text-2xl font-bold mb-2">Best Sellar</h2>
                     </div>
-                    <div className="right-side-shop">
+                    <div className="">
                         <div className="flex gap-5 mt-3">
                             <div onClick={toggleDropdown} className={`second-div ${activeDropdown === 'top' ? 'bg-red active' : ''}`}>
                                 <p onClick={() => setActiveTab('top')} className="border-right"></p>
@@ -53,7 +54,6 @@ const Second = () => {
                             <div onClick={toggleDropdown3} className={`second-div  ${activeDropdown === 'latest' ? 'bg-red' : ''}`}>
                                 <p onClick={() => setActiveTab('latest')} className="border-right"></p>
                             </div>
-
                         </div>
                     </div>
                 </div>
